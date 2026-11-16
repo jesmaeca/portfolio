@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jessica Mae Dela Cruz | Career e-Portfolio</title>
+<meta name="description" content="Computer Science student at De La Salle University focused on business analysis and product management.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFBFC; --blush:#FDEAF1; --petal:#F8C8DB; --rose:#D6336C; --berry:#9E1F4F;
+  --plum:#3B1429; --muted:#7A5266; --butter:#F7E3A8; --line:#F0CFDD;
+  --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{background:var(--white);color:var(--plum);font:400 1.0625rem/1.65 var(--sans)}
+a{color:var(--berry)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:4px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;font-weight:600}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:.5rem}
+.lead{color:var(--muted);max-width:42rem;margin-bottom:2.25rem}
+section{padding:4.5rem 0}
+.tint{background:var(--blush)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:rgba(255,251,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:1.5rem;align-items:center;justify-content:space-between;padding-top:.8rem;padding-bottom:.8rem}
+nav b{font-family:var(--serif);font-size:1.1rem}
+nav ul{display:flex;gap:1.25rem;list-style:none;padding:0;overflow-x:auto;white-space:nowrap}
+nav a{text-decoration:none;color:var(--plum);font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--rose)}
+
+/* hero */
+.hero{padding:5rem 0 4rem;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(3rem,9vw,6.4rem);font-weight:800;letter-spacing:-.02em;color:var(--plum)}
+.hero h1 span{display:block;color:var(--rose);font-weight:400;font-style:italic}
+.hero p{max-width:34rem;margin:1.5rem 0 2rem;font-size:1.2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--plum)}
+.btn.main{background:var(--rose);border-color:var(--rose);color:#fff}
+.btn.main:hover{background:var(--berry);border-color:var(--berry)}
+.btn.alt{color:var(--plum)}
+.btn.alt:hover{background:var(--petal)}
+.sticky-note{background:var(--petal);border-radius:1.5rem 1.5rem 1.5rem .3rem;padding:1.75rem;transform:rotate(2deg);box-shadow:10px 10px 0 var(--butter)}
+.sticky-note h3{font-size:1.15rem;margin-bottom:.75rem}
+.sticky-note li{margin:0 0 .5rem 1.1rem}
+.sticky-note li::marker{color:var(--berry)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p+p{margin-top:1rem}
+.strengths{display:grid;gap:1rem}
+.strengths div{border-left:4px solid var(--rose);padding:.2rem 0 .2rem 1rem}
+.strengths h3{font-size:1.1rem;margin-bottom:.15rem}
+.strengths p{color:var(--muted);font-size:.98rem}
+
+/* projects */
+.cases{display:grid;gap:1.1rem}
+details{background:var(--white);border:1.5px solid var(--line);border-radius:1rem;padding:0}
+details[open]{border-color:var(--rose);box-shadow:6px 6px 0 var(--petal)}
+summary{cursor:pointer;list-style:none;padding:1.25rem 1.5rem;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:600 1.6rem/1 var(--serif);color:var(--rose);flex:none}
+details[open] summary::after{content:"–"}
+summary h3{font-size:1.3rem}
+summary small{display:block;color:var(--muted);font:400 .95rem var(--sans);margin-top:.2rem}
+.case-body{padding:0 1.5rem 1.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.case-body h4{font-family:var(--serif);font-size:1rem;color:var(--berry);margin-bottom:.25rem}
+.case-body p{font-size:.98rem}
+.tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.4rem}
+.tags span,.chips span{background:var(--blush);border-radius:999px;padding:.15rem .75rem;font-size:.88rem;font-weight:500}
+.award{display:inline-block;background:var(--butter);border-radius:.5rem;padding:.1rem .6rem;font-size:.88rem;font-weight:700;margin-left:.4rem}
+
+/* timeline */
+.timeline{list-style:none;padding:0;border-left:3px solid var(--petal);margin-left:.4rem}
+.timeline li{position:relative;padding:0 0 2rem 1.75rem}
+.timeline li::before{content:"";position:absolute;left:-.65rem;top:.4rem;width:1rem;height:1rem;border-radius:50%;background:var(--rose);border:3px solid var(--white)}
+.timeline h3{font-size:1.25rem}
+.timeline .when{color:var(--muted);font-size:.95rem}
+.timeline p{margin-top:.4rem;max-width:44rem}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1.25rem}
+.gallery figure{background:var(--white);border:1.5px solid var(--line);border-radius:1rem;overflow:hidden}
+.gallery figure::before{content:"Your photo goes here";display:grid;place-items:center;aspect-ratio:4/3;background:var(--petal);color:var(--berry);font-weight:500}
+.gallery figure:has(img)::before{display:none}
+.gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.gallery figcaption{padding:1rem 1.1rem 1.2rem}
+.gallery figcaption b{display:block;font:600 1.1rem var(--serif)}
+.gallery figcaption span{display:block;color:var(--berry);font-size:.9rem;font-weight:700;margin:.15rem 0 .4rem}
+.gallery figcaption p{font-size:.95rem;color:var(--muted)}
+
+/* skills / edu */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.cols h3{font-size:1.2rem;margin-bottom:.75rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips span{background:var(--white);border:1px solid var(--line)}
+.edu h3{font-size:1.1rem}
+.edu p{color:var(--muted);font-size:.98rem;margin-bottom:.9rem}
+.edu li{margin-left:1.1rem;font-size:.98rem}
+
+/* testimonials */
+.quote{border:2px dashed var(--rose);border-radius:1rem;padding:1.5rem;background:var(--white)}
+.quote p{font-family:var(--serif);font-size:1.15rem}
+.quote cite{display:block;margin-top:.75rem;font:500 .95rem var(--sans);color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+
+/* contact */
+.contact{background:var(--plum);color:var(--white);text-align:center}
+.contact h2{color:var(--petal)}
+.contact p{color:#E8C9D8;margin:0 auto 1.75rem;max-width:34rem}
+.contact .btn{border-color:var(--petal);color:var(--white)}
+.contact .btn.main{background:var(--petal);color:var(--plum);border-color:var(--petal)}
+.contact .btn.alt:hover{background:rgba(248,200,219,.15)}
+footer{background:var(--plum);color:#C79DB2;text-align:center;padding:1.5rem;font-size:.9rem}
+
+/* pizzazz */
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--rose),var(--petal));transform-origin:left;transform:scaleX(0);z-index:10}
+nav a.on{color:var(--rose);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.hero{position:relative}
+.hero .wrap{position:relative;z-index:1}
+.petals,.blob{position:absolute;pointer-events:none}
+.petals{inset:0}
+.petals span{position:absolute;top:-30px;background:var(--petal);border-radius:100% 0 100% 0;opacity:.8;animation:fall linear infinite}
+.blob{border-radius:50%;filter:blur(50px);opacity:.55}
+.blob.a{width:22rem;height:22rem;background:var(--petal);right:-6rem;top:-4rem;animation:drift 14s ease-in-out infinite alternate}
+.blob.b{width:16rem;height:16rem;background:var(--butter);left:-5rem;bottom:-5rem;animation:drift 18s ease-in-out infinite alternate-reverse}
+.hero p.aim{font:italic 600 1.7rem/1.2 var(--serif);margin:1rem 0 0}
+.role{display:inline-block;color:var(--rose);transition:opacity .35s,transform .35s}
+.role.out{opacity:0;transform:translateY(10px)}
+.ribbon-wrap{overflow:hidden;padding:1.1rem 0;background:var(--white)}
+.ribbon{background:var(--rose);color:#fff;white-space:nowrap;padding:.8rem 0;font:600 1.15rem var(--serif);transform:rotate(-1.2deg);margin:0 -2rem}
+.ribbon div{display:inline-block;animation:slide 32s linear infinite}
+.ribbon:hover div{animation-play-state:paused}
+.ribbon i{font-style:normal;color:var(--butter);margin:0 1.1rem}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+.reveal.done{transition-delay:0s}
+.btn{transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 6px 0 var(--petal)}
+.contact .btn:hover{box-shadow:0 6px 0 rgba(248,200,219,.35)}
+details{transition:border-color .2s,box-shadow .3s}
+details:hover{border-color:var(--rose)}
+.gallery figure{transition:transform .3s,box-shadow .3s}
+.gallery figure:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:8px 8px 0 var(--petal)}
+.gallery img{transition:transform .5s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figure{overflow:hidden}
+.chips span{transition:transform .2s,background .2s}
+.chips span:hover{transform:translateY(-3px) rotate(-2deg);background:var(--petal)}
+.strengths div{transition:padding-left .25s,border-color .25s}
+.strengths div:hover{padding-left:1.4rem;border-color:var(--berry)}
+@media(prefers-reduced-motion:no-preference){
+  .hero h1{animation:rise .8s .1s both}
+  .hero p.aim{animation:rise .8s .3s both}
+  .hero p:not(.aim){animation:rise .8s .45s both}
+  .hero .btns{animation:rise .8s .6s both}
+  .sticky-note{animation:pop .8s .5s both,bob 5s 1.4s ease-in-out infinite}
+  .timeline li:first-child::before{animation:pulse 2s infinite}
+}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:rotate(-8deg) scale(.8)}to{opacity:1;transform:rotate(2deg) scale(1)}}
+@keyframes bob{0%,100%{transform:rotate(2deg) translateY(0)}50%{transform:rotate(.5deg) translateY(-9px)}}
+@keyframes fall{to{transform:translate(70px,120vh) rotate(540deg)}}
+@keyframes drift{to{transform:translate(-40px,50px) scale(1.15)}}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(214,51,108,.5)}100%{box-shadow:0 0 0 14px rgba(214,51,108,0)}}
+
+@media(max-width:52rem){
+  .hero .wrap,.about,.cols,.two,.case-body{grid-template-columns:1fr}
+  .sticky-note{transform:none}
+  nav b{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar" aria-hidden="true"></div>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <b>Jessica Mae Dela Cruz</b>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="blob a" aria-hidden="true"></div><div class="blob b" aria-hidden="true"></div>
+  <div class="petals" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <h1>Jessica Mae <span>Dela Cruz</span></h1>
+      <p class="aim">Aspiring <span class="role" id="role">Business Analyst</span></p>
+      <p>I'm a third-year Computer Science student who turns messy data and big ideas into clear plans. I'm looking for business analyst and product management roles where I can connect people, problems, and technology.</p>
+      <div class="btns">
+        <a class="btn main" href="#projects">See my work</a>
+        <a class="btn alt" href="resume/Jessica-Mae-Dela-Cruz-Resume.pdf">Download resume</a>
+      </div>
+    </div>
+    <aside class="sticky-note" aria-label="Quick facts">
+      <h3>Quick facts</h3>
+      <ul>
+        <li>BS Computer Science, Software Technology, De La Salle University</li>
+        <li>DOST-SEI Merit Scholar and consistent First Honors Dean's Lister</li>
+        <li>Lead researcher, Outstanding Research Award in STEM</li>
+        <li>Executive Vice President for Internals, La Salle Computer Society</li>
+      </ul>
+    </aside>
+  </div>
+</header>
+
+<div class="ribbon-wrap" aria-hidden="true">
+  <div class="ribbon"><div>
+    <span>Data analysis<i>✦</i>Research<i>✦</i>Usability testing<i>✦</i>Strategic planning<i>✦</i>Leadership<i>✦</i>Public speaking<i>✦</i>SQL<i>✦</i>UI/UX design<i>✦</i></span><span>Data analysis<i>✦</i>Research<i>✦</i>Usability testing<i>✦</i>Strategic planning<i>✦</i>Leadership<i>✦</i>Public speaking<i>✦</i>SQL<i>✦</i>UI/UX design<i>✦</i></span>
+  </div></div>
+</div>
+
+<section id="about" class="tint">
+  <div class="wrap about">
+    <div>
+      <h2>About me</h2>
+      <p>I study Computer Science, but the part I enjoy most is the question before the code: what problem are we solving, for whom, and how will we know it worked?</p>
+      <p>That curiosity has led me to analyze flood control data, study why students miss class, found a student environmental organization, and lead socio-civic projects that use technology for community good.</p>
+      <p>I want to work where technical know-how meets people: gathering needs, shaping solutions, and keeping teams moving toward the same goal. I care most about work with social and environmental impact.</p>
+    </div>
+    <div class="strengths">
+      <div><h3>Analytical thinking</h3><p>Applied logistic regression to student behavior data and presented findings to a faculty panel.</p></div>
+      <div><h3>Leadership and organizing</h3><p>Co-founded an organization that won Interest Organization of the Year, and led socio-civic initiatives for a university-wide society.</p></div>
+      <div><h3>Communication</h3><p>Debate trainer, campus ambassador, and student services officer who explains processes and helps classmates get answers.</p></div>
+      <div><h3>User-focused building</h3><p>Designed interfaces and ran usability tests so products are easy to understand and use.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects and research</h2>
+    <p class="lead">Each project is written as a short case study: the problem, what I did, and what it shows. Select one to open it.</p>
+    <div class="cases">
+
+      <details open>
+        <summary><div><h3>Logistic regression study on student absenteeism <span class="award">Outstanding Research Award in STEM</span></h3><small>Lead Researcher, Feb 2023 to Aug 2024</small></div></summary>
+        <div class="case-body">
+          <div><h4>The problem</h4><p>Schools need to understand why students are absent before they can support them.</p></div>
+          <div><h4>What I did</h4><p>Led the research, applied logistic regression to student behavioral data, and presented findings to a faculty panel. It was recognized as the best research paper in STEM.</p></div>
+          <div><h4>What it shows</h4><p>I can turn raw data into evidence-based insights and explain them to decision makers.</p></div>
+          <div class="tags"><span>Statistical modeling</span><span>Research</span><span>Presenting</span></div>
+        </div>
+      </details>
+
+      <details>
+        <summary><div><h3>Data analysis pipeline: DPWH flood control projects</h3><small>Developer, Nov to Dec 2025</small></div></summary>
+        <div class="case-body">
+          <div><h4>The problem</h4><p>Large public datasets on flood control projects are hard to read and review by hand.</p></div>
+          <div><h4>What I did</h4><p>Built a JavaScript application that ingests and analyzes the data and generates automated reports, with efficient memory use and data parsing.</p></div>
+          <div><h4>What it shows</h4><p>I can structure large datasets into reports that support public accountability.</p></div>
+          <div class="tags"><span>Data analysis</span><span>Reporting</span><span>JavaScript</span></div>
+        </div>
+      </details>
+
+      <details>
+        <summary><div><h3>Unsynth: collaborative music review platform</h3><small>Front-End Developer and QA Analyst, Jan 2026 to present</small></div></summary>
+        <div class="case-body">
+          <div><h4>The problem</h4><p>Rating and reviewing music together should feel simple, not cluttered.</p></div>
+          <div><h4>What I did</h4><p>Designed a responsive interface around user-centric UI/UX principles, and ran usability tests to check consistency against standards and expectations.</p></div>
+          <div><h4>What it shows</h4><p>I think about the user first and verify quality through testing.</p></div>
+          <div class="tags"><span>UI/UX design</span><span>Usability testing</span><span>Quality assurance</span><span>MongoDB</span></div>
+        </div>
+      </details>
+
+      <details>
+        <summary><div><h3>K-Sync: K-pop event management website</h3><small>Full-Stack Developer, Oct to Nov 2025</small></div></summary>
+        <div class="case-body">
+          <div><h4>The problem</h4><p>Artist profiles, event schedules, and fan club memberships are connected, and hard to manage separately.</p></div>
+          <div><h4>What I did</h4><p>Designed and developed a database to manage these entities and the relationships between them.</p></div>
+          <div><h4>What it shows</h4><p>I can model how a business or community works as organized, usable data.</p></div>
+          <div class="tags"><span>Database design</span><span>SQL</span><span>Python</span><span>Full-stack</span></div>
+        </div>
+      </details>
+
+      <details>
+        <summary><div><h3>More technical projects</h3><small>AI, machine learning, and software, 2025</small></div></summary>
+        <div class="case-body">
+          <div><h4>PinoyBot</h4><p>A random forest classifier that identifies the language of each word in code-switched Filipino and English text. I tested multiple feature sets, including n-grams and linguistic markers.</p></div>
+          <div><h4>SokoBot and CatBot</h4><p>A Sokoban solver using Greedy Best-First Search with Zobrist hashing, and a Q-learning agent tuned through hyperparameter testing and epsilon-greedy exploration.</p></div>
+          <div><h4>Trading Card Inventory System</h4><p>A Java Swing app to organize, compare, sell, and trade cards, with a clean, intuitive interface.</p></div>
+          <div class="tags"><span>Machine learning</span><span>Algorithms</span><span>Java</span><span>Python</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="tint">
+  <div class="wrap">
+    <h2>Leadership and community work</h2>
+    <p class="lead">Most of my experience so far is in student leadership, where I learned to plan, coordinate, and deliver with other people.</p>
+    <ol class="timeline">
+      <li><h3>Executive Vice President for Internals, La Salle Computer Society</h3><div class="when">Present · promoted from Deputy Vice President</div><p>Leads the internal affairs of the society, supporting its members, officers, and committees. This is a step up from my previous role and a larger share of the organization's day-to-day management.</p></li>
+      <li><h3>Deputy Vice President for Socio-Civic, La Salle Computer Society</h3><div class="when">2024 to previous term</div><p>Headed socio-civic initiatives that use technology for community development and social responsibility.</p></li>
+      <li><h3>Student Services Executive, Computer Science Government</h3><div class="when">2024 to present</div><p>Helps the student body with enlistment and administrative concerns.</p></li>
+      <li><h3>Operations and Finance Member, Lasallian Ambassador</h3><div class="when">2025 to present</div><p>Represents the university as a campus tour orienteer and event usher, and coordinates logistics for campus-wide initiatives.</p></li>
+      <li><h3>Co-founder, TIERRA La Salle</h3><div class="when">2023 to 2024</div><p>Established the first student-led environmental organization for the basic education sector of a top-ranked green university. It was named Organisasyong Pang-Interes ng Taon (Interest Organization of the Year).</p></li>
+      <li><h3>Vice President for Trainings, Lasallian Debate Society</h3><div class="when">2022 to 2024</div><p>Trained members for competitions and earned a Reserve Break at the Zamboanga Debate Open.</p></li>
+    </ol>
+
+    <h3 id="events" style="font-size:1.8rem;margin:2rem 0 .5rem">Events I've been part of</h3>
+    <p class="lead">Photos from events I helped lead, organize, or run. Add yours using the steps in the comment below.</p>
+    <!--
+      HOW TO ADD PHOTOS:
+      1. Create an "images" folder in your repo and upload your photos (JPG or WebP, under 500 KB each).
+      2. Change each <img src> below to your file name, e.g. images/lscs-outreach.jpg.
+      3. Edit the title, your role, and the one-line description.
+      4. To add more, copy a whole <figure>...</figure> block. To remove one, delete the block.
+    -->
+    <div class="gallery">
+      <figure>
+        <img src="images/event-1.jpg" alt="Describe what the photo shows" loading="lazy" onerror="this.remove()">
+        <figcaption><b>Event name</b><span>My role: Led / Organized / Coordinated</span><p>One line on what happened and the result.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="images/event-2.jpg" alt="Describe what the photo shows" loading="lazy" onerror="this.remove()">
+        <figcaption><b>Event name</b><span>My role</span><p>One line on what happened and the result.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="images/event-3.jpg" alt="Describe what the photo shows" loading="lazy" onerror="this.remove()">
+        <figcaption><b>Event name</b><span>My role</span><p>One line on what happened and the result.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="images/event-4.jpg" alt="Describe what the photo shows" loading="lazy" onerror="this.remove()">
+        <figcaption><b>Event name</b><span>My role</span><p>One line on what happened and the result.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="images/event-5.jpg" alt="Describe what the photo shows" loading="lazy" onerror="this.remove()">
+        <figcaption><b>Event name</b><span>My role</span><p>One line on what happened and the result.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="images/event-6.jpg" alt="Describe what the photo shows" loading="lazy" onerror="this.remove()">
+        <figcaption><b>Event name</b><span>My role</span><p>One line on what happened and the result.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills and recognition</h2>
+    <p class="lead">A mix of analysis, technical, and people skills.</p>
+    <div class="cols">
+      <div><h3>Business and product</h3><div class="chips"><span>Strategic planning</span><span>Data analysis</span><span>Research</span><span>Usability testing</span><span>Quality assurance</span><span>Reporting</span></div></div>
+      <div><h3>Technical</h3><div class="chips"><span>SQL</span><span>Python</span><span>Java</span><span>JavaScript</span><span>C</span><span>UI/UX design</span><span>MongoDB</span></div></div>
+      <div><h3>People</h3><div class="chips"><span>Public speaking</span><span>Leadership</span><span>Organizational founding</span><span>Event logistics</span><span>Training</span></div></div>
+    </div>
+    <div class="cols" style="margin-top:3rem">
+      <div class="edu"><h3>Awards</h3><ul><li>Outstanding Research Award in STEM</li><li>Interest Organization of the Year (TIERRA La Salle)</li><li>1st Runner-Up, Cavitewide Search for Math Wizards, March 2023</li><li>Bronze Medalist, International Kangaroo Mathematics Competition, March 2024</li></ul></div>
+      <div class="edu"><h3>Publication</h3><p>Co-author, <a href="https://www.greenpeace.org/philippines/story/60772/unmasking-a-silent-threat/">Unmasking a Silent Threat</a>, Greenpeace Philippines.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="tint">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="cols edu" style="margin-top:1.5rem">
+      <div><h3>De La Salle University</h3><p>BS Computer Science, Major in Software Technology<br>2024 to present</p><ul><li>DOST-SEI Merit Undergraduate Scholar</li><li>Consistent First Honor Dean's Lister</li></ul></div>
+      <div><h3>De La Salle University-Dasmariñas Senior High School</h3><p>STEM Track<br>2022 to 2024</p><ul><li>Rank 12, Br. Andrew Gonzales FSC Honors Society</li><li>St. Br. Miguel Febres Cordero FSC Academic Scholar</li><li>Consistent Highest Honors</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="references">
+  <div class="wrap">
+    <h2>References and testimonials</h2>
+    <p class="lead">Contact details are shared on request.</p>
+    <div class="two">
+      <div class="quote"><p>"Add a short quote from a professor, adviser, or organization officer here."</p><cite>Name, title, organization</cite></div>
+      <div class="quote"><p>"Add a second testimonial from a teammate or project mentor here."</p><cite>Name, title, organization</cite></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I'm open to internships and entry-level opportunities in business analysis and product management.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn main" href="mailto:jessimaedelacruz@gmail.com">Email me</a>
+      <a class="btn alt" href="https://linkedin.com/in/jessicamae-delacruz/">LinkedIn</a>
+      <a class="btn alt" href="https://github.com/jesmaeca">GitHub</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Jessica Mae G. Dela Cruz</footer>
+<script>
+(function(){
+  var bar=document.getElementById('bar'),h=document.documentElement;
+  addEventListener('scroll',function(){
+    bar.style.transform='scaleX('+(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight))+')';
+  },{passive:true});
+
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var so=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)});
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('section[id]').forEach(function(s){so.observe(s)});
+
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+
+  var words=['Business Analyst','Product Manager','Data Storyteller','Team Leader'],i=0,el=document.getElementById('role');
+  setInterval(function(){
+    el.classList.add('out');
+    setTimeout(function(){i=(i+1)%words.length;el.textContent=words[i];el.classList.remove('out')},350);
+  },2600);
+
+  var p=document.querySelector('.petals');
+  for(var n=0;n<12;n++){
+    var s=document.createElement('span'),z=10+Math.random()*14;
+    s.style.cssText='left:'+Math.random()*100+'%;width:'+z+'px;height:'+z+'px;animation-duration:'+(10+Math.random()*10)+'s;animation-delay:-'+Math.random()*14+'s';
+    p.appendChild(s);
+  }
+
+  var ro=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.classList.add('in');
+      ro.unobserve(e.target);
+      setTimeout(function(){e.target.classList.add('done')},1200);
+    });
+  },{threshold:.12});
+  document.querySelectorAll('section h2,.lead,.about p,.strengths div,details,.timeline li,.gallery figure,.cols>div,.quote').forEach(function(t,k){
+    t.classList.add('reveal');
+    t.style.setProperty('--d',(k%4)*0.08+'s');
+    ro.observe(t);
+  });
+})();
+</script>
+</body>
+</html>
